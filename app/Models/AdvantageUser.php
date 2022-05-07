@@ -26,4 +26,11 @@ class AdvantageUser extends Model
         'created_at',
         'updated_at'
     ];
+
+    //one to many
+    public function service()
+    {
+        return $this->belongsTo('App\Models\Service', 'service_id', 'id');
+    }
 }
+
