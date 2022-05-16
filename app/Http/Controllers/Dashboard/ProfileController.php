@@ -14,7 +14,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.dashboard.profile');
     }
 
     /**
@@ -81,5 +81,11 @@ class ProfileController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //custom
+    public function delete()
+    {
+
     }
 }

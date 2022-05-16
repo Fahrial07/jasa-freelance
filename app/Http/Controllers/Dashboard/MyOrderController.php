@@ -14,7 +14,7 @@ class MyOrderController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.dashboard.order.index');
     }
 
     /**
@@ -46,7 +46,7 @@ class MyOrderController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('pages.dashboard.order.detail');
     }
 
     /**
@@ -57,7 +57,7 @@ class MyOrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('pages.dashboard.order.edit');
     }
 
     /**
@@ -81,5 +81,17 @@ class MyOrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    //custom
+
+    public function accepted($id)
+    {
+
+    }
+
+    public function rejected($id)
+    {
+
     }
 }

@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
 
+use App\Models\DetailUser;
+
 class CreateNewUser implements CreatesNewUsers
 {
     use PasswordValidationRules;
@@ -36,6 +38,16 @@ class CreateNewUser implements CreatesNewUsers
                 'password' => Hash::make($input['password']),
             ]), function (User $user) {
                 $this->createTeam($user);
+
+                //add to detail user
+                $detail_user = new DetailUser;
+                $detail_user->users_id = $user->id;
+                $detail_user->photo = NULL;
+                $detail_user->role = NULL;
+                $detail_user->contact_number = NULL;
+                $detail_user->biography = NULL;
+
+                $detail_user->save();
             });
         });
     }

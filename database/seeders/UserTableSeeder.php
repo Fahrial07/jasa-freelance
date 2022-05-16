@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
         $users = [
             [
                 'name'              =>  'Ali Fahrial Anwar',
-                'email'             =>  'alifahiralanwar@gmail.com',
+                'email'             =>  'alifahrialanwar@gmail.com',
                 'password'          =>   Hash::make('12345678'),
                 'remember_token'    =>   NULL,
                 'created_at'        =>   date('Y-m-d H:i:s'),
